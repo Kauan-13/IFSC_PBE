@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.pbe.demo";
+option java_outer_classname = "CalcProto";
+service Calc {
+  rpc soma (CalculadoraRequest) returns (CalculadoraResponse);
+  rpc subtracao (CalculadoraRequest) returns (CalculadoraResponse);
+  rpc multiplicacao (CalculadoraRequest) returns (CalculadoraResponse);
+  rpc divisao (CalculadoraRequest) returns (CalculadoraResponse);
+}
+message CalculadoraRequest {
+  double n1 = 1;
+  double n2 = 2;
+}
+message CalculadoraResponse {
+  double resultado = 1;
+}
